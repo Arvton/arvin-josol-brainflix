@@ -1,0 +1,29 @@
+@use './variables' as *;
+
+//responsive design mixins
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+//padding mixins
+@mixin padding-screen {
+    padding: 0rem 2rem;
+
+    @include tablet {
+        padding: 0rem 4.5rem;
+    }
+}
+
+//divider mixins
+@mixin divider {
+    border-bottom: solid 1px $secondary-two;
+    margin-bottom: 2rem;
+}
