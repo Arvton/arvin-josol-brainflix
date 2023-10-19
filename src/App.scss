@@ -6,6 +6,4 @@
 
 body {
     @include padding-screen;
-    @include page-header;
-    color: $primary-two;
 }

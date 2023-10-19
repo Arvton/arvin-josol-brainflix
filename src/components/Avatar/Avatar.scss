@@ -1,0 +1,13 @@
+@use "../../styles/partials/mixins" as *;
+
+.avatar {
+    width: 4.5rem;
+    height: 4.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+
+    @include tablet {
+        width: 5rem;
+        height: 5rem;
+    }
+}

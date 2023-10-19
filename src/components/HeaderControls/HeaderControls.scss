@@ -1,0 +1,60 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.header {
+    &__controls {
+        width: 100%;
+        display: flex;
+        gap: 2rem;
+        padding-bottom: 2rem;
+        position: relative;
+
+        @include tablet {
+            width: auto;
+            gap: 2.5rem;
+        }
+
+        @include desktop {
+            gap: 3.5rem;
+        }
+    }
+
+    &__search {
+        flex: 4;
+
+        @include tablet {
+            flex: none;
+            width: 30rem;
+        }
+
+        &--input {
+            width: 100%;
+            background: url(../../assets/images/icons/search.svg) no-repeat left 1.25rem center, $secondary-four;
+            font-size: 1.5rem;
+            padding: 1.25rem 1.25rem 1.25rem 4.5rem;
+
+            @include tablet {
+                width: 30rem;
+                padding: 1.5rem 1.5rem 1.5rem 4.5rem;
+                position: relative;
+            }
+        }
+    }
+
+    &__upload {
+        width: 100%;
+        background:
+            url(../../assets/images/icons/upload.svg) no-repeat left 1rem center, $primary-two;
+        @include labels-and-buttons;
+        padding: 1.25rem;
+        position: absolute;
+        bottom: -5rem;
+
+        @include tablet {
+            width: 20rem;
+            position: relative;
+            bottom: 0;
+        }
+    }
+}

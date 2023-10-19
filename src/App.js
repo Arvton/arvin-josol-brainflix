@@ -1,10 +1,10 @@
+import Header from './components/Header/Header'
 import './App.scss';
 
 export default function App() {
   return (
     <div className="App">
-      <p>Test</p>
-      <button>Test button</button>
+      <Header />
     </div>
   );
 }

@@ -20,7 +20,30 @@
     @include tablet {
         padding: 0rem 4.5rem;
     }
+
+    @include desktop {
+        margin: 0 auto;
+        max-width: 136rem;
+    }
 }
+
+//border mixins
+@mixin border-radius-small {
+    border-radius: 0.5rem;
+}
+
+@mixin border-input {
+    border: solid 1px $secondary-three;
+
+    &:active {
+        border: solid 2px $primary-two;
+    }
+
+    &:invalid {
+        border: solid 1px #D22D2D;
+    }
+}
+
 
 //divider mixins
 @mixin divider {

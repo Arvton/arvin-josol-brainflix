@@ -1,12 +1,15 @@
 @use './mixins' as *;
 
+// default typography
 body,
+button,
 input,
 textarea {
     font-family: "Avenir", Arial, sans-serif;
     font-size: 2rem;
 }
 
+// typography mixins
 @mixin page-header {
     font-size: 3rem;
     line-height: 4rem;
@@ -60,7 +63,7 @@ textarea {
 @mixin labels-and-buttons {
     font-size: 1.25rem;
     line-height: 2.5rem;
-    font-weight: 700;
+    font-weight: 600;
 
     @include tablet {
         font-size: 1.5rem;
