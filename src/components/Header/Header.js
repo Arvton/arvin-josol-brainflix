@@ -3,7 +3,7 @@ import HeaderControls from "../HeaderControls/HeaderControls";
 import './Header.scss';
 
 export default function Header() {
-    return(
+    return (
         <header className="header">
             <Logo />
             <HeaderControls />
