@@ -3,7 +3,3 @@
 @use './styles/partials/fonts';
 @use './styles/partials/typography' as *;
 @use './styles/partials/mixins' as *;
-
-body {
-    @include padding-screen;
-}

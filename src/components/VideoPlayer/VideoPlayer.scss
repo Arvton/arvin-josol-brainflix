@@ -1,5 +1,13 @@
+@use "../../styles/partials/mixins" as *;
+
 .videos {
     &__player {
+        width: 100%;
+        aspect-ratio: 16/9;
         margin-top: 7rem;
+
+        @include tablet {
+            margin-top: 0rem;
+        }
     }
 }

@@ -1,7 +1,9 @@
 import './VideoPlayer.scss'
 
-export default function VideoPlayer() {
+export default function VideoPlayer({ thumbnail }) {
     return (
-        <p className="videos__player">This is a placeholder for video element</p>
+        <>
+        <video className="videos__player" poster={thumbnail} controls></video>
+        </>
     )
 }
