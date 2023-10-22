@@ -1,7 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .videos {
-    &__layout {
+    &__container {
         @include padding-screen;
     }
 }
