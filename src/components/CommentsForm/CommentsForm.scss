@@ -1,0 +1,63 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.videos {
+    &__comments-form {
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__form-avatar {
+        margin-top: 2rem;
+    }
+
+    &__form-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form-label {
+        font-size: 1.25rem;
+        color: $primary-three;
+        padding-bottom: 0.5rem;
+    }
+
+    &__form-input {
+        font-size: 1.5rem;
+        color: $primary-one;
+        background-color: $secondary-four;
+        @include border-input;
+        @include border-radius-small;
+        padding: 1.5rem;
+
+        &--name {
+            margin-bottom: 3rem;
+        }
+
+        &--comment {
+            overflow-y: scroll;
+            resize: none;
+            height: 12rem;
+            margin-bottom: 2rem;
+        }
+
+        &::placeholder {
+            color: $primary-one;
+        }
+    }
+
+    &__form-button {
+        width: 100%;
+        @include labels-and-buttons;
+        background:
+            url(../../assets/images/icons/add_comment.svg) no-repeat left 1.5rem center, $primary-two;
+        padding: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    &__form-divider {
+        @include divider;
+    }
+}

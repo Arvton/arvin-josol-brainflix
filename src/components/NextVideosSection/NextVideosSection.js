@@ -1,10 +1,23 @@
 import MiniVideos from "../MiniVideos/MiniVideos";
+import "./NextVideosSection.scss"
 
-export default function NextVideos() {
+export default function NextVideos({ nextVideosList, changeCurrentVideoData, changeCurrentVideoId, currentVideoId }) {
     return (
         <>
-            <p>This is a placeholder for next videos section</p>
-            <MiniVideos />
+            <h3 className="videos__section-title">NEXT VIDEOS</h3>
+            {
+                nextVideosList.filter((video) => {
+                    return video.id !== currentVideoId
+                }).map((video) => (
+                    <MiniVideos
+                        changeCurrentVideoId={changeCurrentVideoId}
+                        id={video.id}
+                        title={video.title}
+                        channel={video.channel}
+                        thumbnail={video.image}
+                    />
+                ))
+            }
         </>
     )
 }

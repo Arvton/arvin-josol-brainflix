@@ -8,21 +8,30 @@ import './VideoSection.scss'
 
 export default function VideoSection() {
     // initializes current video id as first video in videos list
-    const currentVideoId = nextVideosList[0].id
+    const [currentVideoId, setCurrentVideoId] = useState(nextVideosList[0].id)
     // initializes current video data to be video-info/object with matching id from next video list
     const [currentVideoData, setMainVideo] = useState(mainVideoData.find((data) => data.id === currentVideoId))
 
-    const changeCurrentVideoData = (id) => {
+    const changeCurrentVideoId = (id => {
+        setCurrentVideoId(id)
         const newVideoData = mainVideoData.find((data) => data.id === id)
         setMainVideo(newVideoData)
-    }
+    })
 
     return (
         <section className="videos">
             <VideoPlayer thumbnail={currentVideoData.image} />
             <div className="videos__container">
-                <MainVideo currentVideoData={currentVideoData} />
-                <NextVideos changeCurrentVideoData={changeCurrentVideoData} currentVideoId={currentVideoId} />
+                <div className="videos__current">
+                    <MainVideo currentVideoData={currentVideoData} />
+                </div>
+                <div className="videos__next">
+                    <NextVideos
+                        nextVideosList={nextVideosList}
+                        changeCurrentVideoId={changeCurrentVideoId}
+                        currentVideoId={currentVideoId}
+                    />
+                </div>
             </div>
         </section>
     )

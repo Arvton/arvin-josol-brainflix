@@ -1,12 +1,11 @@
 import Comments from "../Comments/Comments";
 import CommentsForm from "../CommentsForm/CommentsForm";
 
-export default function CommentsSection() {
+export default function CommentsSection({ comments }) {
     return (
         <>
-            <p>This is a placeholder for comments section</p>
             <CommentsForm />
-            <Comments />
+            <Comments comments={comments} />
         </>
     )
 }

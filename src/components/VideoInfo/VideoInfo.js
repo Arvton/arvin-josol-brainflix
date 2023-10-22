@@ -9,7 +9,7 @@ export default function VideoInfo({ title, channel, timestamp, views, likes, des
     const day = date.getDate();
     const formattedDate = `${month}/${day}/${year}`
     return (
-        <div className="videos__current">
+        <>
             <h1 className="videos__title">{title}</h1>
             <div className="videos__divider videos__divider--title"></div>
             <div className="videos__info">
@@ -31,7 +31,6 @@ export default function VideoInfo({ title, channel, timestamp, views, likes, des
             <div className="videos__divider"></div>
             <p className="videos__description">{description}</p>
             <p className="videos__total-comments">{totalComments} Comments</p>
-        </div>
-
+        </>
     )
 }

@@ -1,0 +1,31 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.videos {
+    &__next-card {
+        @include body-copy;
+        color: $primary-one;
+        display: flex;
+        gap: 2rem;
+        padding-bottom: 1.5rem;
+    }
+
+    &__next-thumbnail {
+        aspect-ratio: 6/3.75;
+        width: 12rem;
+        height: 7.5rem;
+        object-fit: cover;
+        @include border-radius-small;
+    }
+
+    &__next-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__next-title {
+        font-weight: 600;
+    }
+}

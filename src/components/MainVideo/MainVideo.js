@@ -14,7 +14,7 @@ export default function MainVideo(props) {
                 description={currentVideoData.description}
                 totalComments={currentVideoData.comments.length}
             />
-            <CommentsSection />
+            <CommentsSection comments={currentVideoData.comments} />
         </>
 
     )
