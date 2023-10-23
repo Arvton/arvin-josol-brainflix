@@ -10,12 +10,12 @@ export default function VideoSection() {
     // initializes current video id as first video in videos list
     const [currentVideoId, setCurrentVideoId] = useState(nextVideosList[0].id)
     // initializes current video data to be video-info/object with matching id from next video list
-    const [currentVideoData, setMainVideo] = useState(mainVideoData.find((data) => data.id === currentVideoId))
+    const [currentVideoData, setCurrentVideoData] = useState(mainVideoData.find((data) => data.id === currentVideoId))
 
     const changeCurrentVideoId = (id => {
         setCurrentVideoId(id)
         const newVideoData = mainVideoData.find((data) => data.id === id)
-        setMainVideo(newVideoData)
+        setCurrentVideoData(newVideoData)
     })
 
     return (

@@ -9,7 +9,13 @@
         margin-top: 7rem;
 
         @include tablet {
+            aspect-ratio: 16/8;
             margin-top: 0rem;
+            padding: 0rem 4.5rem;
+        }
+
+        @include desktop {
+            aspect-ratio: 16/6;
         }
     }
 }

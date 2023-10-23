@@ -16,7 +16,7 @@
         }
 
         @include desktop {
-            gap: 3.5rem;
+            gap: 3rem;
         }
     }
 
@@ -46,7 +46,9 @@
         width: 100%;
         background:
             url(../../assets/images/icons/upload.svg) no-repeat left 1rem center, $primary-two;
+        background-size: 2.5rem;
         @include labels-and-buttons;
+        font-weight: 400;
         padding: 1.25rem;
         position: absolute;
         bottom: -5rem;
@@ -55,6 +57,12 @@
             width: 20rem;
             position: relative;
             bottom: 0;
+        }
+    }
+
+    &__avatar {
+        @include desktop {
+            margin-left: 2rem;
         }
     }
 }

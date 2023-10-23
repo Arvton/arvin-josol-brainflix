@@ -3,5 +3,9 @@
 .videos {
     &__container {
         @include padding-screen;
+
+        @include desktop {
+            display: flex;
+        }
     }
 }

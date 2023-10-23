@@ -3,11 +3,25 @@
 @use "../../styles/partials/typography" as *;
 
 .videos {
-    padding-bottom: 1rem;
+    &__next {
+        @include desktop {
+            border-left: solid 1px $secondary-three;
+            padding-left: 3rem;
+        }
+    }
 
     &__section-title {
         @include subheader;
         color: $primary-three;
         padding-bottom: 2rem;
+
+        @include tablet {
+            padding-bottom: 3rem;
+            margin-top: 3rem;
+        }
+
+        @include desktop {
+            padding-bottom: 2rem;
+        }
     }
 }
