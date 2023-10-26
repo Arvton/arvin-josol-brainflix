@@ -19,20 +19,22 @@ export default function VideoSection() {
     })
 
     return (
-        <section className="videos">
-            <VideoPlayer thumbnail={currentVideoData.image} />
-            <div className="videos__container">
-                <div className="videos__current">
-                    <MainVideo currentVideoData={currentVideoData} />
+        <main>
+            <section className="videos">
+                <VideoPlayer thumbnail={currentVideoData.image} />
+                <div className="videos__container">
+                    <div className="videos__current">
+                        <MainVideo currentVideoData={currentVideoData} />
+                    </div>
+                    <div className="videos__next">
+                        <NextVideos
+                            nextVideosList={nextVideosList}
+                            changeCurrentVideoId={changeCurrentVideoId}
+                            currentVideoId={currentVideoId}
+                        />
+                    </div>
                 </div>
-                <div className="videos__next">
-                    <NextVideos
-                        nextVideosList={nextVideosList}
-                        changeCurrentVideoId={changeCurrentVideoId}
-                        currentVideoId={currentVideoId}
-                    />
-                </div>
-            </div>
-        </section>
+            </section>
+        </main>
     )
 }

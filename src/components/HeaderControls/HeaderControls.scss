@@ -50,13 +50,19 @@
         @include labels-and-buttons;
         font-weight: 400;
         padding: 1.25rem;
-        position: absolute;
-        bottom: -5rem;
 
         @include tablet {
             width: 20rem;
-            position: relative;
-            bottom: 0;
+        }
+
+        &--positioning {
+            width: 100%;
+            position: absolute;
+            bottom: -5rem;
+
+            @include tablet {
+                position: static;
+            }
         }
     }
 

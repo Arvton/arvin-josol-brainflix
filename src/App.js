@@ -1,14 +1,19 @@
 import Header from './components/Header/Header'
-import './App.scss';
 import VideoSection from './components/VideoSection/VideoSection';
+import Upload from './pages/Upload/Upload';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.scss';
 
 export default function App() {
   return (
     <div className="App">
-      <Header />
-      <main>
-        <VideoSection />
-      </main>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<VideoSection />} />
+          <Route path="/upload" element={<Upload />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
