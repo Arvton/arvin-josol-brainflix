@@ -5,9 +5,157 @@
 @use '../../styles/partials/mixins' as *;
 
 .upload {
-    margin-top: 7rem;
+    @include padding-screen;
 
-    @include tablet {
-        margin-top: 0rem;
+    &__divider {
+        border-bottom: solid 1px $secondary-three;
+        margin-top: 7rem;
+
+        @include tablet {
+            margin-top: 0rem;
+        }
     }
+
+    &__title {
+        @include page-header;
+        font-weight: 600;
+        padding: 3rem 0rem 2.5rem;
+
+        @include tablet {
+            font-weight: 700;
+            padding: 5rem 0rem 2.5rem;
+        }
+    }
+
+    &__container {
+        @include tablet {
+            border-top: solid 1px $secondary-three;
+            padding-top: 4rem;
+        }
+
+        @include desktop {
+            border-bottom: solid 1px $secondary-three;
+            display: flex;
+            gap: 3rem;
+        }
+    }
+
+    &__image-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        padding-bottom: 2rem;
+
+        @include tablet {
+            width: 50%;
+        }
+
+        @include desktop {
+            width: 32%;
+            padding-bottom: 4rem;
+        }
+    }
+
+    &__image {
+        aspect-ratio: 16/9;
+        object-fit: fit;
+        @include border-radius-small;
+
+        @include desktop {
+            aspect-ratio: 16/8.5;
+        }
+    }
+
+    &__label {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $primary-three;
+        padding-bottom: 0.5rem;
+    }
+
+    &__form {
+        @include desktop {
+            width: 100%;
+            position: relative;
+        }
+
+        &-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-input {
+            font-size: 1.5rem;
+            background-color: $secondary-four;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+
+            @include desktop {
+                margin-bottom: 3.5rem;
+            }
+        }
+
+        &-textarea {
+            font-size: 1.5rem;
+            background-color: $secondary-four;
+            overflow-y: scroll;
+            resize: none;
+            height: 12rem;
+            @include border-input;
+            @include border-radius-small;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+
+            &::placeholder {
+                color: $primary-one;
+            }
+
+            @include desktop {
+                height: 11rem;
+            }
+        }
+    }
+
+    &__button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        @include tablet {
+            flex-direction: row-reverse;
+            border-top: solid 1px $secondary-three;
+            padding-top: 3rem;
+        }
+
+        @include desktop {
+            border: none;
+            position: absolute;
+            right: 0;
+            bottom: -8rem;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        @include labels-and-buttons;
+        font-weight: 400;
+        padding: 1.25rem;
+
+        @include tablet {
+            width: 20rem;
+        }
+
+        &--publish {
+            background:
+                url(../../assets/images/icons/publish.svg) no-repeat left 1rem center, $primary-two;
+            background-size: 2.5rem;
+        }
+
+        &--cancel {
+            color: $primary-two;
+            font-weight: 600;
+            background-color: $primary-four;
+        }
+    }
+
 }
