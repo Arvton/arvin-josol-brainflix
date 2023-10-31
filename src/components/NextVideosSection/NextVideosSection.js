@@ -1,7 +1,7 @@
 import MiniVideos from "../MiniVideos/MiniVideos";
 import "./NextVideosSection.scss"
 
-export default function NextVideos({ nextVideosList, changeCurrentVideoData, changeCurrentVideoId, currentVideoId }) {
+export default function NextVideos({ nextVideosList, changeCurrentVideoId, currentVideoId }) {
     return (
         <>
             <h3 className="videos__section-title">NEXT VIDEOS</h3>

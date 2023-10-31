@@ -1,6 +1,6 @@
 import "./MiniVideos.scss"
 
-export default function MiniVideos({ changeCurrentVideoData, changeCurrentVideoId, id, title, channel, thumbnail }) {
+export default function MiniVideos({ changeCurrentVideoId, id, title, channel, thumbnail }) {
     const clickHandler = (event) => {
         const id = event.target.id
         changeCurrentVideoId(id)
