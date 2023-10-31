@@ -1,0 +1,5 @@
+{
+    "baseUrl": "https://project-2-api.herokuapp.com",
+    "apiKey": "?api_key=51bb01ba-9174-4a84-a4ea-1714c6b4932f",
+    "videosEndpoint": "/videos"
+}
