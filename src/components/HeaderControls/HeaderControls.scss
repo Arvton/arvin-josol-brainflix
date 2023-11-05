@@ -51,6 +51,12 @@
         font-weight: 400;
         padding: 1.25rem;
 
+        &:hover {
+            background:
+            url(../../assets/images/icons/upload.svg) no-repeat left 1rem center, $secondary-two;
+            background-size: 2.5rem;
+        }
+
         @include tablet {
             width: 20rem;
         }

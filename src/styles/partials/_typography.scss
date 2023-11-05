@@ -1,10 +1,7 @@
 @use './mixins' as *;
 
 // default typography
-body,
-button,
-input,
-textarea {
+@mixin page-font {
     font-family: "Avenir", Arial, sans-serif;
     font-size: 2rem;
 }

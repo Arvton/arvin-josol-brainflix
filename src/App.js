@@ -1,5 +1,5 @@
 import Header from './components/Header/Header'
-import VideoSection from './components/VideoSection/VideoSection';
+import VideoSection from './pages/VideoSection/VideoSection';
 import Upload from './pages/Upload/Upload';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';

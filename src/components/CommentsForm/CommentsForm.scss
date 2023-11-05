@@ -97,6 +97,12 @@
         padding: 1.25rem;
         margin-bottom: 2rem;
 
+        &:hover {
+            background:
+            url(../../assets/images/icons/add_comment.svg) no-repeat left 1.5rem center, $secondary-two;
+        background-size: 2rem;
+        }
+
         @include tablet {
             width: 27rem;
             height: 5rem;

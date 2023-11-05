@@ -1,7 +1,7 @@
 import api from '../../components/utils/utils.json'
-import MainVideo from "../MainVideo/MainVideo";
-import NextVideos from "../NextVideosSection/NextVideosSection";
-import VideoPlayer from "../VideoPlayer/VideoPlayer";
+import MainVideo from "../../components/MainVideo/MainVideo";
+import NextVideos from "../../components/NextVideosSection/NextVideosSection";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -48,11 +48,6 @@ export default function VideoSection() {
         }
     }, [videoId, nextVideoList]);
 
-
-    const changeCurrentVideoId = (id => {
-        setCurrentVideoId(id)
-    })
-
     return (
         <main>
             <section className="videos">
@@ -64,7 +59,6 @@ export default function VideoSection() {
                     <div className="videos__next">
                         {nextVideoList && <NextVideos
                             nextVideosList={nextVideoList}
-                            changeCurrentVideoId={changeCurrentVideoId}
                             currentVideoId={currentVideoId}
                         />}
                     </div>
