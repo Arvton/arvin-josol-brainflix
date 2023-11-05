@@ -1,17 +1,14 @@
+import { Link } from "react-router-dom";
 import "./MiniVideos.scss"
 
-export default function MiniVideos({ changeCurrentVideoId, id, title, channel, thumbnail }) {
-    const clickHandler = (event) => {
-        const id = event.target.id
-        changeCurrentVideoId(id)
-    }
+export default function MiniVideos({ id, title, channel, thumbnail }) {
     return (
-        <div onClick={clickHandler} className="videos__next-card" id={id}>
-            <img className="videos__next-thumbnail" src={thumbnail} alt={`${id} thumbnail`} id={id}></img>
-            <div className="videos__next-details" id={id}>
-                <p className="videos__next-title" id={id}>{title}</p>
-                <p className="videos__next-channel" id={id}>{channel}</p>
+        <Link to={`/videos/${id}`} className="videos__next-card" key={id}>
+            <img className="videos__next-thumbnail" src={thumbnail} alt={`${id} thumbnail`}></img>
+            <div className="videos__next-details">
+                <p className="videos__next-title">{title}</p>
+                <p className="videos__next-channel">{channel}</p>
             </div>
-        </div>
+        </Link>
     )
 }

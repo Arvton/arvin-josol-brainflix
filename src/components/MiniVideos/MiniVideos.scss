@@ -29,6 +29,7 @@
     }
 
     &__next-thumbnail {
+        background-color: $secondary-three;
         aspect-ratio: 6/3.75;
         width: 12rem;
         object-fit: cover;

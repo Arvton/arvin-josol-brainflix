@@ -3,16 +3,20 @@ import MainVideo from "../MainVideo/MainVideo";
 import NextVideos from "../NextVideosSection/NextVideosSection";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import './VideoSection.scss'
 
 export default function VideoSection() {
-    // test getting data and logging it on the console. this is the next videos data
+    // initialize videoId param. linking to /videos/:videoid should trigger change in currentVideoId
+    const { videoId } = useParams()
+    // initialize next video list. will be populated by first useEffect
     const [nextVideoList, setNextVideoList] = useState([])
     // initializes current video id as first video in videos list
     const [currentVideoId, setCurrentVideoId] = useState()
     // initializes current video data to be video-info/object with matching id from next video list
     const [currentVideoData, setCurrentVideoData] = useState()
+    // gets list of videos and sets the current video id to the id of the first video
     useEffect(() => {
         axios.get(`${api.baseUrl}${api.videosEndpoint}${api.apiKey}`)
             .then(response => {
@@ -34,6 +38,17 @@ export default function VideoSection() {
         }
     }, [currentVideoId]);
 
+    useEffect(() => {
+        // Set the currentVideoId to the value from the URL if it exists
+        if (videoId) {
+            setCurrentVideoId(videoId);
+        }
+        else if (nextVideoList.length > 0) {
+            setCurrentVideoId(nextVideoList[0].id);
+        }
+    }, [videoId, nextVideoList]);
+
+
     const changeCurrentVideoId = (id => {
         setCurrentVideoId(id)
     })
@@ -41,7 +56,7 @@ export default function VideoSection() {
     return (
         <main>
             <section className="videos">
-                {currentVideoData && <VideoPlayer thumbnail={currentVideoData.image} />}
+                {currentVideoData && <VideoPlayer thumbnail={currentVideoData.image} source={`${currentVideoData.video}${api.apiKey}`} />}
                 <div className="videos__container">
                     <div className="videos__current">
                         {currentVideoData && <MainVideo currentVideoData={currentVideoData} />}

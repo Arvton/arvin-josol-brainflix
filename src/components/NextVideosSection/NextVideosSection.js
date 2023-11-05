@@ -1,7 +1,7 @@
 import MiniVideos from "../MiniVideos/MiniVideos";
 import "./NextVideosSection.scss"
 
-export default function NextVideos({ nextVideosList, changeCurrentVideoId, currentVideoId }) {
+export default function NextVideos({ nextVideosList, currentVideoId }) {
     return (
         <>
             <h3 className="videos__section-title">NEXT VIDEOS</h3>
@@ -10,7 +10,7 @@ export default function NextVideos({ nextVideosList, changeCurrentVideoId, curre
                     return video.id !== currentVideoId
                 }).map((video) => (
                     <MiniVideos
-                        changeCurrentVideoId={changeCurrentVideoId}
+                        key={video.id}
                         id={video.id}
                         title={video.title}
                         channel={video.channel}

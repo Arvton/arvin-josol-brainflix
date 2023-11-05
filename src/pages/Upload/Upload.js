@@ -12,6 +12,11 @@ export default function Upload() {
         alert("Upload successful! Returning to Home Page.")
         navigate("/")
     }
+
+    const cancelHandler = () => {
+        alert("Upload cancelled. Returning to Home Page.")
+        navigate("/")
+    }
     return (
         <>
             <div className="upload__divider"></div>
@@ -28,7 +33,7 @@ export default function Upload() {
                         </div>
                         <div className="upload__button-container">
                             <Button className='upload__button upload__button--publish' onClick={uploadHandler} buttonContent='PUBLISH' />
-                            <Button className='upload__button upload__button--cancel' buttonContent='CANCEL' />
+                            <Button className='upload__button upload__button--cancel' onClick={cancelHandler} buttonContent='CANCEL' />
                         </div>
                     </form>
                 </div>

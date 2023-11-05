@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Avatar from "../Avatar/Avatar"
 import "./Comments.scss"
 
@@ -12,7 +13,7 @@ export default function Comments({ comments }) {
                     const day = date.getDate();
                     const formattedDate = `${month}/${day}/${year}`
                     return (
-                        <>
+                        <Fragment key={comment.id}>
                             <div className="videos__comment-card">
                                 <Avatar className="videos__comment-avatar" />
                                 <div className="videos__comment-container">
@@ -24,7 +25,7 @@ export default function Comments({ comments }) {
                                 </div>
                             </div>
                             <div className="videos__comment-divider"></div>
-                        </>
+                        </Fragment>
                     )
                 }
                 )

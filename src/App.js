@@ -11,7 +11,9 @@ export default function App() {
         <Header />
         <Routes>
           <Route path="/" element={<VideoSection />} />
+          <Route path="/videos/:videoId" element={<VideoSection />} />
           <Route path="/upload" element={<Upload />} />
+          <Route path="*" element={<VideoSection />}/>
         </Routes>
       </BrowserRouter>
     </div>
