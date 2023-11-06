@@ -1,10 +1,11 @@
 import Comments from "../Comments/Comments";
 import CommentsForm from "../CommentsForm/CommentsForm";
 
-export default function CommentsSection({ comments }) {
+export default function CommentsSection({ comments, handleNewComment, videoId }) {
+
     return (
         <>
-            <CommentsForm />
+            <CommentsForm videoId={videoId} handleNewComment={handleNewComment} />
             <Comments comments={comments} />
         </>
     )
