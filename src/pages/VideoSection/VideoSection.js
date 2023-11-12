@@ -18,7 +18,7 @@ export default function VideoSection() {
     const [currentVideoData, setCurrentVideoData] = useState()
     // test new comments
     const [comments, setComments] = useState([])
-    // gets list of videos and sets the current video id to the id of the first video 
+    // gets list of videos and sets the current video id to the id of the first video
     useEffect(() => {
         axios.get(`${api.baseUrl}${api.videosEndpoint}${api.apiKey}`)
             .then(response => {
@@ -35,7 +35,6 @@ export default function VideoSection() {
         if (currentVideoId) {
             axios.get(`${api.baseUrl}${api.videosEndpoint}/${currentVideoId}${api.apiKey}`)
                 .then(response => {
-                    console.log(response.data)
                     setCurrentVideoData(response.data)
                     const sortedComments = response.data.comments.sort((y, x) => {
                         return x.timestamp - y.timestamp
