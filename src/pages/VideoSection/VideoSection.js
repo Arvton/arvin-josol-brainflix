@@ -54,8 +54,8 @@ export default function VideoSection() {
         }
     }, [videoId, nextVideoList]);
 
-    const handleNewComment = (newComment) => {
-        setComments([newComment, ...comments])
+    const handleNewComment = (updatedComments) => {
+        setComments(updatedComments)
     }
 
     return (

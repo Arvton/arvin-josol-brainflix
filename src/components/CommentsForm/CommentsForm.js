@@ -17,10 +17,13 @@ export default function CommentsForm({ handleNewComment, videoId }) {
             name: "User",
             comment: commentInput
         }
-        axios.post(`${api.baseUrl}${api.videosEndpoint}/${videoId}/comments${api.apiKey}`, newComment)
+        axios.post(`${api.baseUrl}${api.videosEndpoint}${videoId}/comments`, newComment)
             .then((response) => {
                 setCommentInput("")
-                handleNewComment(response.data)
+                const sortedComments = response.data.sort((y, x) => {
+                    return x.timestamp - y.timestamp
+                })
+                handleNewComment(sortedComments)
             })
     }
     return (

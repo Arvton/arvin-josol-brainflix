@@ -28,9 +28,9 @@ export default function Upload() {
         }
         axios.post(`${api.baseUrl}${api.videosEndpoint}`, newVideo)
             .then(response => {
-                alert("Upload successful! Returning to Home Page.")
-                navigate("/")
             })
+        alert("Upload successful! Returning to Home Page.")
+        navigate("/")
     }
 
     const cancelHandler = () => {
