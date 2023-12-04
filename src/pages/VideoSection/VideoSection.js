@@ -65,7 +65,10 @@ export default function VideoSection() {
                 <div className="videos__container">
                     <div className="videos__current">
                         {currentVideoData &&
-                            <MainVideo currentVideoData={currentVideoData} comments={comments} handleNewComment={handleNewComment} />}
+                            <MainVideo
+                                currentVideoData={currentVideoData}
+                                comments={comments}
+                                handleNewComment={handleNewComment} />}
                     </div>
                     <div className="videos__next">
                         {nextVideoList && <NextVideos

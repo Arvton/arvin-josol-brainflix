@@ -6,7 +6,7 @@ export default function CommentsSection({ comments, handleNewComment, videoId })
     return (
         <>
             <CommentsForm videoId={videoId} handleNewComment={handleNewComment} />
-            <Comments comments={comments} />
+            <Comments videoId={videoId} comments={comments} handleRefreshComment={handleNewComment}/>
         </>
     )
 }

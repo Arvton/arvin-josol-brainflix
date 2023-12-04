@@ -1,8 +1,11 @@
 import { Fragment } from "react";
 import Avatar from "../Avatar/Avatar"
+import deleteIcon from "../../assets/images/icons/icon-delete.svg"
+import api from '../../components/utils/utils.json'
+import axios from "axios";
 import "./Comments.scss"
 
-export default function Comments({ comments }) {
+export default function Comments({ comments, videoId, handleRefreshComment }) {
     return (
         <>
             {
@@ -12,6 +15,15 @@ export default function Comments({ comments }) {
                     const month = (date.getMonth() + 1).toString().padStart(2, "0");
                     const day = date.getDate();
                     const formattedDate = `${month}/${day}/${year}`
+                    const handleDeleteComment = () => {
+                        axios.delete(`${api.baseUrl}${api.videosEndpoint}${videoId}/comments/${comment.id}`)
+                            .then(response => {
+                                const sortedComments = response.data.sort((y, x) => {
+                                    return x.timestamp - y.timestamp
+                                })
+                                handleRefreshComment(sortedComments)
+                            })
+                    }
                     return (
                         <Fragment key={comment.id}>
                             <div className="videos__comment-card">
@@ -23,6 +35,7 @@ export default function Comments({ comments }) {
                                     </div>
                                     <p className="videos__comment-text">{comment.comment}</p>
                                 </div>
+                                <img src={deleteIcon} alt="delete icon" onClick={handleDeleteComment}></img>
                             </div>
                             <div className="videos__comment-divider"></div>
                         </Fragment>
